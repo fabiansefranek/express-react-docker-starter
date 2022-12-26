@@ -1,0 +1,18 @@
+root = true
+
+# All Files
+[*]
+end_of_line = crlf
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown Files
+[*.{md,mdx}]
+trim_trailing_whitespace = false
+
+# JSON Files
+[*.{json,webmanifest}]
+indent_size = 2
