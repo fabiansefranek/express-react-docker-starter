@@ -1,0 +1,19 @@
+version: "3"
+services:
+    frontend:
+        build:
+            context: ./frontend
+            dockerfile: ./Dockerfile
+        environment:
+            - PORT=3000
+            - REACT_APP_BACKEND_URL=http://localhost:8080
+        ports:
+            - "3000:3000"
+    backend:
+        build:
+            context: ./backend
+            dockerfile: ./Dockerfile
+        environment:
+            - PORT=8080
+        ports:
+            - "8080:8080"
