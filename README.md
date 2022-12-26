@@ -1,2 +1,2 @@
-<center><img src="./logo.png" height="100"></img></center>
-<center><h1>Typescript React Express Docker Boilerplate</h1></center>
+<p align="center"><img src="./logo.png" height="100"></img></p>
+<h1 align="center">Typescript React Express Docker Boilerplate</h1>
