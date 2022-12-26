@@ -1,0 +1,3 @@
+type SampleType = {
+    id: number;
+};
