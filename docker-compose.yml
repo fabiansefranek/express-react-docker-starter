@@ -4,9 +4,9 @@ services:
         build:
             context: ./frontend
             dockerfile: ./Dockerfile
-            args: 
+            args:
                 - REACT_APP_BACKEND_URL=http://localhost:${EXPRESS_PORT}
-        env_file: 
+        env_file:
             - .env
         environment:
             - PORT=${REACT_PORT}
@@ -16,11 +16,9 @@ services:
         build:
             context: ./backend
             dockerfile: ./Dockerfile
-        env_file: 
+        env_file:
             - .env
         environment:
             - PORT=${EXPRESS_PORT}
         ports:
             - ${EXPRESS_PORT}:${EXPRESS_PORT}
-
-# https://github.com/janishar/nodejs-backend-architecture-typescript/blob/master/docker-compose.yml
