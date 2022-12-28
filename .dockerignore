@@ -1,0 +1,17 @@
+.idea
+.vscode
+.vs
+
+*.log
+
+node_modules
+
+build/**/*
+dist/**/*
+
+coverage
+
+.gitignore
+.git
+
+.DS_Store 
