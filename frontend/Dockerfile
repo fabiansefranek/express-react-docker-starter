@@ -1,8 +1,9 @@
 FROM node:19-alpine
-ENV NODE_ENV=production
-COPY package*.json .
+COPY package*.json ./
+COPY tsconfig.json ./
 RUN npm ci
 RUN npm install -g serve
 COPY . .
+ARG REACT_APP_BACKEND_URL
 RUN npm run build
 CMD ["npx", "serve", "-s", "build"]

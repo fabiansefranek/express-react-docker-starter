@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 
-const BACKEND_URL = `${process.env.REACT_APP_BACKEND_URL}`;
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 function App() {
     const [message, setMessage] = useState<string>("");
 
     useEffect(() => {
+        console.log(process.env);
         fetch(`${BACKEND_URL}/api/hello`)
             .then((res) => res.json())
             .then((data) => setMessage(data.message))

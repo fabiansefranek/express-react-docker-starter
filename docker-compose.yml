@@ -4,16 +4,23 @@ services:
         build:
             context: ./frontend
             dockerfile: ./Dockerfile
+            args: 
+                - REACT_APP_BACKEND_URL=http://localhost:${EXPRESS_PORT}
+        env_file: 
+            - .env
         environment:
-            - PORT=3000
-            - REACT_APP_BACKEND_URL=http://localhost:8080
+            - PORT=${REACT_PORT}
         ports:
-            - "3000:3000"
+            - ${REACT_PORT}:${REACT_PORT}
     backend:
         build:
             context: ./backend
             dockerfile: ./Dockerfile
+        env_file: 
+            - .env
         environment:
-            - PORT=8080
+            - PORT=${EXPRESS_PORT}
         ports:
-            - "8080:8080"
+            - ${EXPRESS_PORT}:${EXPRESS_PORT}
+
+# https://github.com/janishar/nodejs-backend-architecture-typescript/blob/master/docker-compose.yml

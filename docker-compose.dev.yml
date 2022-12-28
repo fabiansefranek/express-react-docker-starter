@@ -4,20 +4,25 @@ services:
         build:
             context: ./frontend
             dockerfile: ./Dockerfile.dev
+            args: 
+                - REACT_APP_BACKEND_URL=http://localhost:${EXPRESS_PORT}
+        env_file: 
+            - .env
         environment:
-            - PORT=3000
-            - REACT_APP_BACKEND_URL=http://localhost:8080
+            - PORT=${REACT_PORT}
         ports:
-            - "3000:3000"
+            - ${REACT_PORT}:${REACT_PORT}
         volumes:
             - ./frontend/src:/src
     backend:
         build:
             context: ./backend
             dockerfile: ./Dockerfile.dev
+        env_file: 
+            - .env
         environment:
-            - PORT=8080
+            - PORT=${EXPRESS_PORT}
         ports:
-            - "8080:8080"
+            - ${EXPRESS_PORT}:${EXPRESS_PORT}
         volumes:
             - ./backend/src:/src
