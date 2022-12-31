@@ -22,3 +22,13 @@ services:
             - PORT=${EXPRESS_PORT}
         ports:
             - ${EXPRESS_PORT}:${EXPRESS_PORT}
+    db:
+        image: postgres:15.1-alpine
+        environment:
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DB=${POSTGRES_DB}
+        ports:
+            - ${POSTGRES_PORT}:${POSTGRES_PORT}
+        volumes:
+            - ./postgres-data:/var/lib/postgresql/data
