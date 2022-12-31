@@ -1,12 +1,12 @@
 version: "3"
 services:
-    frontend:
+    client:
         build:
-            context: ./frontend
+            context: ./client
             dockerfile: ./Dockerfile.dev
-            args: 
+            args:
                 - REACT_APP_BACKEND_URL=http://localhost:${EXPRESS_PORT}
-        env_file: 
+        env_file:
             - .env
         environment:
             - PORT=${REACT_PORT}
@@ -14,11 +14,11 @@ services:
             - ${REACT_PORT}:${REACT_PORT}
         volumes:
             - ./frontend/src:/src
-    backend:
+    api:
         build:
-            context: ./backend
+            context: ./api
             dockerfile: ./Dockerfile.dev
-        env_file: 
+        env_file:
             - .env
         environment:
             - PORT=${EXPRESS_PORT}
