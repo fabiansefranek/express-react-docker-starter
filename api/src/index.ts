@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import sampleRoute from "./routes/sample.route";
-import errorHandler from "./middlewares/error.middleware";
+import errorHandler from "./middleware/error.middleware";
 import cors from "cors";
 
 dotenv.config();
@@ -20,4 +20,4 @@ app.listen(PORT, () => {
 // Graceful shutdown
 process.on("SIGTERM", () => {
     console.info("SIGTERM signal received.");
-})
+});
