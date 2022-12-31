@@ -1,5 +1,5 @@
 <p align="center"><img src="./logo.png" height="100"></img></p>
-<h1 align="center">Typescript React Express Docker Boilerplate</h1>
+<h1 align="center">Express React Docker Starter</h1>
 
 ### Additional packages
 * Backend (Express):
